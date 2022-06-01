@@ -4,7 +4,7 @@ const Bodies = Matter.Bodies;
 const Constraint = Matter.Constraint;
 var engine, world, backgroundImg;
 
-var canvas, angle, tower, ground, cannon;
+var canvas, angle, tower, ground, cannon, ball;
 
 function preload() {
   backgroundImg = loadImage("./assets/background.gif");
@@ -26,7 +26,9 @@ function setup() {
 
   tower = Bodies.rectangle(160, 350, 160, 310, options);
   World.add(world, tower);
+
   cannon = new Cannon(180, 110, 130, 100, 20)
+  ball = new CannonBall(cannon.x, cannon.y)
 }
 
 function draw() {
@@ -43,5 +45,6 @@ function draw() {
   pop();  
 
   cannon.show ()
+  ball.show()
 
 }
