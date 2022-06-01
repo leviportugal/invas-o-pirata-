@@ -26,7 +26,7 @@ function setup() {
 
   tower = Bodies.rectangle(160, 350, 160, 310, options);
   World.add(world, tower);
-
+ angleMode (DEGREES)
   cannon = new Cannon(180, 110, 130, 100, 20)
   ball = new CannonBall(cannon.x, cannon.y)
 }
@@ -46,5 +46,13 @@ function draw() {
 
   cannon.show ()
   ball.show()
+}
+
+function keyReleased (){
+if (keyCode === DOWN_ARROW){
+ ball.lance ()
+}
+
 
 }
+

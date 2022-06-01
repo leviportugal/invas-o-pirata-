@@ -9,10 +9,19 @@ class Cannon {
     this.cannonbaseimage = loadImage ("assets/cannonBase.png")
   }
   show (){
+   
+    if (keyIsDown(RIGHT_ARROW) && this.angle<70){
+       this.angle+=1
+    }
+    if (keyIsDown(LEFT_ARROW) && this.angle>-30){
+      this.angle-=1
+   }
     image (this.cannonbaseimage, 70, 20, 200, 200)
     push ()
+    translate (this.x,this.y)
+    rotate (this.angle)
     imageMode (CENTER)
-    image (this.cannonimage, this.x, this.y, this.width, this.height)
+    image (this.cannonimage, 0,0 , this.width, this.height)
     pop ()
   }
 }

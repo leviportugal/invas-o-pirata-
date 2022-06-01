@@ -13,6 +13,10 @@ class CannonBall {
         image ( this.image, this.body.position.x, this.body.position.y,this.r, this.r  )
         pop ()
     }
-
+  
+    lance(){
+     Matter.Body.setStatic (this.body, false)
+     Matter.Body.setVelocity (this.body, {x:30,y:-20})
+    }
 
 }
