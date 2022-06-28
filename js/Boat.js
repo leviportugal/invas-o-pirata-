@@ -16,7 +16,10 @@ class Boat {
       }
 
     remove(index) {
-        setTimeout(() => {
+        this.animation = boatbrokenAnimation
+      this.width = 300
+      this.height = 300
+      setTimeout(() => {
           Matter.World.remove(world, boats[index].body);
           delete boats[index];
         }, 2000);

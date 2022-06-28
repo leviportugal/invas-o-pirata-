@@ -11,6 +11,10 @@ var boats = [];
 var boatAnimation = [];
 var boatSpriteData, boatSpriteSheet;
 
+var boatbrokenAnimation = [];
+var boatbrokenSpriteData, boatbrokenSpriteSheet;
+
+
 function preload() {
   backgroundImg = loadImage("./assets/background.gif");
   towerImage = loadImage("./assets/tower.png");
@@ -18,6 +22,8 @@ function preload() {
   boatSpriteData =  loadJSON ("assets/boat/boat.json");
   boatSpriteSheet = loadImage ("assets/boat/boat.png");
 
+  boatbrokenSpriteData = loadJSON ("assets/boat/brokenBoat.json")
+  boatbrokenSpriteSheet = loadImage ("assets/boat/brokenBoat.png")
 }
 
 function setup() {
@@ -44,6 +50,13 @@ function setup() {
     var pos = boatFrames[i].position;
     var img = boatSpriteSheet.get(pos.x, pos.y, pos.w, pos.h);
     boatAnimation.push (img);
+  }
+
+  var boatbrokenFrames = boatbrokenSpriteData.frames;
+  for (var i=0; i< boatbrokenFrames.length; i++){
+    var pos = boatbrokenFrames[i].position;
+    var img = boatbrokenSpriteSheet.get(pos.x, pos.y, pos.w, pos.h);
+    boatbrokenAnimation.push (img);
   }
  
 }
